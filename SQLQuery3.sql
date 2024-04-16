@@ -72,7 +72,7 @@ SELECT DATEDIFF(hour, MIN(tarix_ve_saat), MAX(tarix_ve_saat)) AS saat_ferq
 FROM Sifarisler
 WHERE masa_nomre = 1;
 
---Ən son 30 dəqiqədən əvvəl verilmiş sifarişləri select edən query: istemirxxxxx
+--Ən son 30 dəqiqədən əvvəl verilmiş sifarişləri select edən query
 SELECT *
 FROM Sifarisler
 WHERE tarix_ve_saat >= DATEADD(minute, -30, GETDATE());
