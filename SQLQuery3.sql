@@ -1,16 +1,19 @@
-﻿CREATE DATABASE Restorants
+--Database yaradırıq
+CREATE DATABASE Restorants
+--Database keçid
 USE Restorants
 
+-- Yeməklər table yaradırıq
 CREATE TABLE Yemekler (
     Id INT PRIMARY KEY,
     adi VARCHAR(50),
     qiymeti DECIMAL(10, 2)
 );
-
+--masalar table yaradırıq
 CREATE TABLE Masalar (
     nomre INT PRIMARY KEY
 );
-
+--sifarişlər table yaradıldı və yeməklər ilə masalar tableri  əlaqələndirildi
 CREATE TABLE Sifarisler (
     Id INT PRIMARY KEY,
     yemek_id INT,
@@ -20,17 +23,20 @@ CREATE TABLE Sifarisler (
     FOREIGN KEY (masa_nomre) REFERENCES Masalar(nomre)
 );
 
+--Yemekler table nümunə məlumatlar əlavə olundu
 INSERT INTO Yemekler (Id, adi, qiymeti) VALUES
 (1, 'Pizza', 15.99),
 (2, 'Burger', 9.99),
 (3, 'Salat', 7.99);
 
+--Masalar table nümunə məlumatlar əlavə olundu
 INSERT INTO Masalar (nomre) VALUES
 (1),
 (2),
 (3),
 (4);
 
+--Sifarişlər Table nümunə məlumatlar əlavə olundu
 INSERT INTO Sifarisler (Id, yemek_id, masa_nomre, tarix_ve_saat) VALUES
 (1, 1, 1, '2024-04-15 12:30:00'),
 (2, 2, 2, '2024-04-15 13:45:00'),
